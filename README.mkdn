@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/reneeb/Sub-Called.svg?branch=master)](https://travis-ci.org/reneeb/Sub-Called)
-[![Kwalitee status](http://cpants.cpanauthors.org/dist/Sub-Called.png)](http://cpants.charsbar.org/dist/overview/Sub-Called)
+[![Kwalitee status](https://cpants.cpanauthors.org/dist/Sub-Called.png)](https://cpants.cpanauthors.org/dist/Sub-Called)
 [![GitHub issues](https://img.shields.io/github/issues/reneeb/Sub-Called.svg)](https://github.com/reneeb/Sub-Called/issues)
 
 # NAME
@@ -126,7 +126,7 @@ Curtis "Ovid" Poe, `<ovid at cpan.org>`
 
 # ISSUE TRACKER & CODE REPOSITORY
 
-An issue tracker and the code repository are available at [http://github.com/reneeb/Sub-Called](http://github.com/reneeb/Sub-Called).
+An issue tracker and the code repository are available at [https://github.com/reneeb/Sub-Called](https://github.com/reneeb/Sub-Called).
 
 
 
