@@ -32,31 +32,13 @@ jobs:
           perl-version: ${{ matrix.perl }}
           multi-thread: ${{ matrix.threaded }}
       - name: Install build tools 
-        run: cpanm ExtUtils::MakeMaker Module::Build Dist::Zilla
-      - name: Show content of log files on Linux
-        if: ${{ failure() && startsWith( matrix.runner, 'ubuntu-' )  }}
-        run: cat /home/runner/.cpanm/work/*/build.log
-      - name: Show content of log files on Mac
-        if: ${{ failure() && startsWith( matrix.runner, 'macos-' )  }}
-        run: cat /Users/runner/.cpanm/work/*/build.log
-      - name: Show content of log files on Windows
-        if: ${{ failure() && startsWith( matrix.runner, 'windows-' )  }}
-        run: cat C:/Users/RUNNER~1/.cpanm/work/*/build.log
+        run: cpanm -v ExtUtils::MakeMaker Module::Build Dist::Zilla
       - name: Perl version
         run: perl -V
       - name: Install build dependencies 
         run: |
-          dzil authordeps --missing | cpanm --notest
-          dzil listdeps --author --missing | cpanm --notest
-          dzil test --author --release
-      - name: Show content of log files on Linux
-        if: ${{ failure() && startsWith( matrix.runner, 'ubuntu-' )  }}
-        run: cat /home/runner/.cpanm/work/*/build.log
-      - name: Show content of log files on Mac
-        if: ${{ failure() && startsWith( matrix.runner, 'macos-' )  }}
-        run: cat /Users/runner/.cpanm/work/*/build.log
-      - name: Show content of log files on Windows
-        if: ${{ failure() && startsWith( matrix.runner, 'windows-' )  }}
-        run: cat C:/Users/RUNNER~1/.cpanm/work/*/build.log
+          dzil -v authordeps --missing | cpanm -v --notest
+          dzil -v listdeps --author --missing | cpanm -v --notest
+          dzil test --author --release --test-verbose
       - name: Run tests
         run: prove -lv t
