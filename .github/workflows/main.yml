@@ -37,8 +37,8 @@ jobs:
         run: perl -V
       - name: Install build dependencies 
         run: |
-          dzil -v authordeps --missing | cpanm -v --notest
-          dzil -v listdeps --author --missing | cpanm -v --notest
+          dzil authordeps --missing | cpanm -v --notest
+          dzil listdeps --author --missing | cpanm -v --notest
           dzil test --author --release --test-verbose
       - name: Run tests
         run: prove -lv t
